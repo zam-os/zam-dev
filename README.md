@@ -1,80 +1,45 @@
-# Your ZAM Community Instance
+# ZAM Developer Community
 
-This is a ZAM community instance. Use this template to create a shared ZAM
-space for a team, open-source project, professional association, or any
-purposeful collective.
+This is the ZAM developer community — the group of people actively building
+[zam-core](https://github.com/zam-os/zam), the symbiotic learning kernel.
 
 ## What lives here
 
-- **`beliefs/`** — the community's shared worldview. The ZAM agent uses these
-  as context when assisting members. Approved by git commit.
-- **`goals/`** — shared objectives, decomposed into tasks and learning tokens.
-- **`members/`** — who belongs to this community and in what role.
-- **`.zam/config.yaml`** — non-secret community configuration: identity, and the
-  list of source repos members should clone locally.
+- **`beliefs/`** — our shared engineering principles, committed to git.
+- **`goals/`** — what we are building and why.
+- **`members/`** — who is in the community and their role.
+- **`.zam/config.yaml`** — the repos every member clones locally.
 
-## Getting started
+## Joining
 
-### 1. Create your community repo from this template
-
-Click **"Use this template"** on GitHub. For a public community (recommended),
-create a public repository, e.g. `your-org/zam-your-community`.
-
-Clone it:
-```bash
-git clone https://github.com/your-org/zam-your-community
-cd zam-your-community
-```
-
-### 2. Edit `.zam/config.yaml`
-
-Set the community identity and list any source repos members should clone:
+Add this community to your personal `.zam/config.yaml`:
 
 ```yaml
-identity:
-  community_id: your-community
-
-repos:
-  - url: github:your-org/your-main-repo
-    description: The main source repository
-    link: false
+communities:
+  - url: github:zam-os/zam-dev
+    role: developer
 ```
 
-### 3. Run `/setup` in Claude Code or Gemini CLI
+Then run `/setup` in your personal instance. It will clone this repo and all
+listed source repos automatically, and set up `npm link` so your local
+`zam-core` source is used instead of the npm package.
 
-```bash
-claude  # or: gemini
-# then: /setup
-```
+## What setup clones
 
-### 4. Add beliefs, goals, and members
+When you run `/setup` as a `zam-dev` member, these repos are cloned alongside
+your personal instance:
 
-Edit the files in `beliefs/`, `goals/`, and `members/` to reflect your
-community's identity. Commit each change — the git history is your approval trail.
+| Repo | Purpose | Linked |
+|------|---------|--------|
+| `zam-os/zam` | zam-core source — CLI, kernel, FSRS engine | `npm link` |
+| `zam-os/zam-personal` | Personal instance template | No |
+| `zam-os/zam-community` | Community instance template | No |
 
-## How members join
+## Workflow
 
-1. Members add this community to their personal instance's `.zam/config.yaml`:
-   ```yaml
-   communities:
-     - url: github:your-org/zam-your-community
-       role: member
-   ```
-2. They run `/setup` in their personal instance — it reads the community config,
-   clones this repo and any listed source repos automatically.
+Work happens in `zam-os/zam`. Changes to the kernel are proposed as PRs,
+reviewed, and merged. The templates (`zam-personal`, `zam-community`) are
+updated when setup or config schema changes.
 
-## Supported platforms
-
-| Platform | Package manager |
-|----------|----------------|
-| macOS (Apple Silicon) | Homebrew (`brew`) |
-| Windows 11 | WinGet (`winget`) / WSL |
-
-## Updating after a zam-core upgrade
-
-```bash
-npm install
-npx zam setup --force
-git add .claude/skills/zam/ .gemini/skills/zam/
-git commit -m "chore: update zam-core skill files"
-```
+See [`docs/TEMPLATES.md`](https://github.com/zam-os/zam/blob/main/docs/TEMPLATES.md)
+for the full template/instance model.

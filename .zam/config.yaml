@@ -1,11 +1,17 @@
-# ZAM Community Instance Configuration
+# ZAM Developer Community Configuration
 # Non-secret values only. This file is git-tracked.
 
 identity:
-  community_id: ""           # slug for this community, e.g. "zam-dev"
+  community_id: zam-dev
   type: community
 
-repos:                       # source repositories members should clone locally
-  []                         # - url: github:org/repo
-                             #   description: what this repo is
-                             #   link: false   # true = npm link after cloning
+repos:
+  - url: github:zam-os/zam
+    description: The zam-core learning kernel — source code, CLI, and FSRS engine
+    link: true
+  - url: github:zam-os/zam-personal
+    description: Personal instance template
+    link: false
+  - url: github:zam-os/zam-community
+    description: Community instance template
+    link: false
