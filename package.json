@@ -1,0 +1,9 @@
+{
+  "name": "zam-community",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A ZAM community instance — shared beliefs, goals, and member configuration.",
+  "dependencies": {
+    "zam-core": "^0.3.0"
+  }
+}

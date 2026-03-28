@@ -1,0 +1,11 @@
+# ZAM Community Instance Configuration
+# Non-secret values only. This file is git-tracked.
+
+identity:
+  community_id: ""           # slug for this community, e.g. "zam-dev"
+  type: community
+
+repos:                       # source repositories members should clone locally
+  []                         # - url: github:org/repo
+                             #   description: what this repo is
+                             #   link: false   # true = npm link after cloning
