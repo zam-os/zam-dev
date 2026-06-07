@@ -20,13 +20,14 @@ communities:
     role: developer
 ```
 
-Then run `/setup` in your personal instance. It will clone this repo and all
-listed source repos automatically, and set up `npm link` so your local
-`zam-core` source is used instead of the npm package.
+Then run the setup skill in your personal instance. Use `/setup` in
+Claude/Gemini-compatible clients or `$setup` (or `/skills`) in Codex. It will
+clone this repo and all listed source repos automatically, and set up `npm link`
+so your local `zam-core` source is used instead of the npm package.
 
 ## What setup clones
 
-When you run `/setup` as a `zam-dev` member, these repos are cloned alongside
+When you run the setup skill as a `zam-dev` member, these repos are cloned alongside
 your personal instance:
 
 | Repo | Purpose | Linked |

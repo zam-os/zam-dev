@@ -6,6 +6,9 @@ user-invocable: true
 
 # ZAM Community Setup
 
+In Codex, invoke this workflow as `$setup` or select `setup` through `/skills`.
+Codex does not expose repository skills as custom `/setup` slash commands.
+
 You are guiding the user through first-time setup of their ZAM community instance.
 Be direct and practical. Run each step, confirm it worked, then move to the next.
 
@@ -114,7 +117,7 @@ Tell the user:
 
 > "Community setup is complete. Add your community's beliefs, goals, and members,
 > then commit each change. Members join by listing this community in their personal
-> `.zam/config.yaml` and running `/setup`."
+> `.zam/config.yaml` and running the setup skill. In Codex, invoke `$setup`."
 
 ---
 

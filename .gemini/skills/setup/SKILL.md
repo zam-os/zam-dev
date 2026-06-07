@@ -14,7 +14,7 @@ Be direct and practical. Run each step, confirm it worked, then move to the next
 ## What you are setting up
 
 - **This repo** (`beliefs/`, `goals/`, `members/`) — the community's slow layer. Tracked in git.
-- **Skill files** — copied from `zam-core` into `.claude/skills/zam/` and `.gemini/skills/zam/`.
+- **Skill files** — copied from `zam-core` into `.claude/skills/zam/`, `.agent/skills/zam/`, and `.agents/skills/zam/`.
 - **Source repos** — cloned alongside this repo, linked if they are source packages.
 
 ---
@@ -60,7 +60,8 @@ npx zam --version
 npx zam setup --skip-init --skip-claude-md
 ```
 
-Copies `.claude/skills/zam/` and `.gemini/skills/zam/` from `node_modules/zam-core/`.
+Copies the ZAM skill into all supported agent directories, including
+`.agents/skills/zam/` for Codex.
 
 To update existing files: `npx zam setup --skip-init --skip-claude-md --force`
 
@@ -103,7 +104,7 @@ npx zam --version
 ## Step 6 — Commit setup artifacts
 
 ```bash
-git add .claude/skills/zam/ .gemini/skills/zam/ CLAUDE.md
+git add .claude/skills/zam/ .agent/skills/zam/ .agents/skills/zam/ CLAUDE.md AGENTS.md
 git commit -m "chore: distribute zam-core skill files"
 ```
 
@@ -122,6 +123,6 @@ Tell the user:
 ```bash
 npm install
 npx zam setup --skip-init --skip-claude-md --force
-git add .claude/skills/zam/ .gemini/skills/zam/
+git add .claude/skills/zam/ .agent/skills/zam/ .agents/skills/zam/
 git commit -m "chore: update zam-core skill files"
 ```
