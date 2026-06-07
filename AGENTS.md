@@ -6,14 +6,16 @@ beliefs, goals, and learning context.
 
 ## First time here?
 
-Run `/setup` to complete first-time setup. It will:
+Invoke `$setup` or select `setup` through `/skills` to complete first-time setup. It will:
 - Install dependencies and distribute skill files (`zam setup`)
 - Configure the community identity
 - Set up any linked source repositories for developer communities
 
 ## Regular use
 
-Run `/zam` to start a learning session in the context of this community.
+Invoke `$zam` or select `zam` through `/skills` to start a learning session in
+the context of this community. Codex repository skills live under
+`.agents/skills/`; they are not custom slash commands.
 
 ## What lives here
 
